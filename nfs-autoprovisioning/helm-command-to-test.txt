@@ -1,0 +1,1 @@
+helm install --name blackboard --set persistence.storageClass=managed-nfs-storage,mariadb.master.persistence.storageClass=managed-nfs-storage stable/wordpress

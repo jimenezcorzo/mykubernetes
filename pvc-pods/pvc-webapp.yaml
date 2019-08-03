@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+  run: mywebapp
+  name: mywebapp
+spec:
+  containers:
+  - image: nginx
+    name: mywebapp
+    volumeMounts:
+    - mountPath: "/var/www/html"
+      name: web-data
+    ports:
+    - containerPort: 80
+  volumes:
+    - name: web-data
+      persistentVolumeClaim:
+        claimName: myowm-pvc

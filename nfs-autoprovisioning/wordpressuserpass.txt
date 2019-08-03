@@ -1,0 +1,6 @@
+  echo Username: user
+  echo Password: $(kubectl get secret --namespace default blackboard-wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode)
+
+Username: user
+Password: mJJ3Bm2JQM
+
